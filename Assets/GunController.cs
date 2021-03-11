@@ -8,7 +8,7 @@ public class GunController : MonoBehaviour
     public Transform barrelPoint;
     private LineRenderer lineRenderer;
 
-    public AudioClip gunFireSound;
+    public AudioClip[] gunFireSounds;
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -23,6 +23,7 @@ public class GunController : MonoBehaviour
     }
 
     public void FireGun() {
-        AudioSource.PlayClipAtPoint(gunFireSound, transform.position);
+        int idx = Random.Range(0, gunFireSounds.Length);
+        AudioSource.PlayClipAtPoint(gunFireSounds[idx], transform.position);
     }
 }
