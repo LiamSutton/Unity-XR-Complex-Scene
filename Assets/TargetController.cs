@@ -19,15 +19,15 @@ public class TargetController : MonoBehaviour
 
     public void Hit()
     {
-        StartCoroutine("IChangeMaterial");
-    }
-
-    IEnumerator IChangeMaterial() {
-        Debug.Log("STARTING HIT");
         AudioSource.PlayClipAtPoint(hitSound, transform.position);
         renderer.material = hitMaterial;
-        yield return new WaitForSeconds(hitDelay);
+    }
+
+    public void Hide() {
         renderer.material = baseMaterial;
-        Debug.Log("ENDING HIT");
+        gameObject.SetActive(false);
+    }
+
+    void Show() {
     }
 }
