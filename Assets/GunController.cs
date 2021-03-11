@@ -18,8 +18,7 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // lineRenderer.SetPosition(0, barrelPoint.position);
-        // lineRenderer.SetPosition(1, barrelPoint.transform.forward * 1000.0f);
+        
     }
 
     public void FireGun() {
@@ -30,11 +29,9 @@ public class GunController : MonoBehaviour
 
         if (Physics.Raycast(barrelPoint.transform.position, barrelPoint.transform.forward, out hit, 1000.0f)) {
             if (hit.collider.gameObject.tag.Equals("Target")) {
-                Debug.Log("HIT TARGET");
                 hit.collider.gameObject.SendMessage("Hit");
             }
             else {
-                Debug.Log("DIDNT HIT TARGET");
             }
         }
     }

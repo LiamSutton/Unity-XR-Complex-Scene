@@ -9,8 +9,6 @@ public class TargetController : MonoBehaviour
 
     public AudioClip hitSound;
 
-    public float hitDelay = 2.0f;
-
     private Renderer renderer;
     void Start()
     {
