@@ -25,5 +25,18 @@ public class GunController : MonoBehaviour
     public void FireGun() {
         int idx = Random.Range(0, gunFireSounds.Length);
         AudioSource.PlayClipAtPoint(gunFireSounds[idx], transform.position);
+        Ray ray;
+        RaycastHit hit;
+        ray =  new Ray(barrelPoint.position, barrelPoint.forward * 100.0f);
+
+        if (Physics.Raycast(ray, out hit)) {
+            if (hit.collider.gameObject.tag.Equals("Target")) {
+                Debug.Log("HIT TARGET");
+                hit.collider.gameObject.SendMessage("Hit");
+            }
+            else {
+                Debug.Log("DIDNT HIT TARGET");
+            }
+        }
     }
 }
