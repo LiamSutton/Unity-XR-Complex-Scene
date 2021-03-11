@@ -7,6 +7,8 @@ public class GunController : MonoBehaviour
     // Start is called before the first frame update
     public Transform barrelPoint;
     private LineRenderer lineRenderer;
+
+    public AudioClip gunFireSound;
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -18,5 +20,9 @@ public class GunController : MonoBehaviour
     {
         lineRenderer.SetPosition(0, barrelPoint.position);
         lineRenderer.SetPosition(1, barrelPoint.transform.forward * 100.0f);
+    }
+
+    public void FireGun() {
+        AudioSource.PlayClipAtPoint(gunFireSound, transform.position);
     }
 }
