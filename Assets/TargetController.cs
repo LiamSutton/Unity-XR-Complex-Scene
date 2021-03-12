@@ -15,7 +15,7 @@ public class TargetController : MonoBehaviour
         renderer = gameObject.GetComponent<Renderer>();
     }
 
-    public void Hit()
+    public void ChangeMaterial()
     {
         AudioSource.PlayClipAtPoint(hitSound, transform.position);
         renderer.material = hitMaterial;
