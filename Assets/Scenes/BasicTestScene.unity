@@ -14762,7 +14762,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1234793486}
         m_TargetAssemblyTypeName: TeleportMenuController, Assembly-CSharp
-        m_MethodName: TeleportToShootingGallery
+        m_MethodName: TeleportToCubeSpawner
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
